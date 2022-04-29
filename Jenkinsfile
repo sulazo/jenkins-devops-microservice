@@ -3,17 +3,17 @@ pipeline{
 	//u can use node:13.8 etc
     agent any
 	environment {
-		// dockerHome = tool 'myDocker'
+		dockerHome = tool 'myDocker'
 		mavenHome  = tool 'myMaven'
-		PATH ="$mavenHome/bin:$PATH"
-		// PATH ="$dockerHome/bin:$mavenHome/bin:$PATH"
+		//PATH ="$mavenHome/bin:$PATH"
+		PATH ="$dockerHome/bin:$mavenHome/bin:$PATH"
 	}
     stages{
 
         stage('Continuous Build'){
 			steps{
-				//sh 'mvn --version'
-				// sh "docker version"
+				sh 'mvn --version'
+				sh "docker version"
               echo "Download"
 			  echo "PATH -$PATH"
 			  echo "BUILD_NUMBER - $env.BUILD_NUMBER"
