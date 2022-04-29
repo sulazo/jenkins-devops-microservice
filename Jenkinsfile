@@ -38,6 +38,7 @@ pipeline{
 	 stage('Build Docker Image'){
 
 			steps{
+				echo "build image"
            // "docker build -t shokunbi/docker-image:$env.BUILD_TAG"
 		//    script{
 		// 	   dockerImage=docker.build{"shokunbi/docker-image:$env.BUILD_TAG"}
