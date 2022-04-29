@@ -3,7 +3,7 @@ pipeline{
 	//u can use node:13.8 etc
     agent any
 	environment {
-		dockerHome = tool 'myDocker'
+		// dockerHome = tool 'myDocker'
 		mavenHome  = tool 'myMaven'
 		PATH ="$mavenHome/bin:$PATH"
 		// PATH ="$dockerHome/bin:$mavenHome/bin:$PATH"
@@ -49,21 +49,21 @@ pipeline{
 
         }
 
-	   stage('Push Docker Image'){
-		   steps{
-           script{
-			   docker.withRegistry('','dockerhub') {
-				 dockerImage.push();
-			   	 dockerImage.push('latest');
+	//    stage('Push Docker Image'){
+	// 	   steps{
+    //        script{
+	// 		   docker.withRegistry('','dockerhub') {
+	// 			 dockerImage.push();
+	// 		   	 dockerImage.push('latest');
 
-			   }
+	// 		   }
 			
 
-		   }
+	// 	   }
 
-			}
+	// 		}
 
-        }
+    //     }
     }
 	
 }
