@@ -28,7 +28,7 @@ pipeline{
        stage('Package'){
 
 		steps{
-            sh "mvn package"
+            // sh "mvn package"
 
 			}
 
@@ -39,9 +39,9 @@ pipeline{
 
 			steps{
            // "docker build -t shokunbi/docker-image:$env.BUILD_TAG"
-		   script{
-			   dockerImage=docker.build{"shokunbi/docker-image:$env.BUILD_TAG"}
-		   }
+		//    script{
+		// 	   dockerImage=docker.build{"shokunbi/docker-image:$env.BUILD_TAG"}
+		//    }
 
 			}
 
