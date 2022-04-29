@@ -29,6 +29,7 @@ pipeline{
 
 		steps{
             // sh "mvn package"
+			echo "build  mvn image"
 
 			}
 
