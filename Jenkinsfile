@@ -36,34 +36,34 @@ pipeline{
         }
        
        
-	 stage('Build Docker Image'){
+	//  stage('Build Docker Image'){
 
-			steps{
-				echo "build image"
-            "docker build -t shokunbi/docker-image:$env.BUILD_TAG"
-		   script{
-		 	   dockerImage=docker.build{"shokunbi/docker-image:$env.BUILD_TAG"}
-		    }
+	// 		steps{
+	// 			   echo "build image"
+    //                 "docker build -t shokunbi/docker-image:$env.BUILD_TAG"
+	// 	   script{
+	// 	 	   dockerImage=docker.build{"shokunbi/docker-image:$env.BUILD_TAG"}
+	// 	    }
 
-			}
+	// 		}
 
-        }
+    //     }
 
-	   stage('Push Docker Image'){
-		   steps{
-           script{
-			   docker.withRegistry('','dockerhub') {
-				 dockerImage.push();
-			   	 dockerImage.push('latest');
+	//    stage('Push Docker Image'){
+	// 	   steps{
+    //        script{
+	// 		   docker.withRegistry('','dockerhub') {
+	// 			 dockerImage.push();
+	// 		   	 dockerImage.push('latest');
 
-			   }
+	// 		   }
 			
 
-		   }
+	// 	   }
 
-			}
+	// 		}
 
-        }
-    }
+    //     }
+    // }
 	
 }
